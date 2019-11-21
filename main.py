@@ -2,10 +2,10 @@
 import random
 fonts = ["\"Agency FB\"", "Albertina", "Antiqua", "Archetect", "Arial", "BankFuturistic", "BankGothic", "Blackletter", "Blagovest", "Calibri", "\"Comic Sans MS\"", "Consolas", "Courier", "Cursive", "Decorative", "Fantasy", "Fraktur", "Frosty", "Garamond", "Geogia", "Helvetica", "Impact", "Minion", "Monospace", "Perpetua", "Roman", "Sans-serif", "Serif", "Script", "Swiss", "Times", "\"Times New Roman\"", "Verdana"]
 hexdict = ["1", "2", "3", "4", "5", "6", "7", "8", "9","A", "B", "C", "D", "E", "F"]
-START_WIDTH = 710 #Smallest width in px to start the media queries
-END_WIDTH = 720 #Largest width in px to end media querying
-START_HEIGHT  = 710 #Smallest height in px to start the media queries
-END_HEIGHT = 720 #Largest height in px to start the media queries
+START_WIDTH = 300 #Smallest width in px to start the media queries
+END_WIDTH = 1920 #Largest width in px to end media querying
+START_HEIGHT  = 300 #Smallest height in px to start the media queries
+END_HEIGHT = 1920 #Largest height in px to start the media queries
 
 def generate_colorcode():
     hexdigit = "#"
@@ -20,6 +20,7 @@ def generate_font():
 
 f_append = ""
 i = START_WIDTH
+f = open("style.css", "w") #opens style.css file
 while i <= END_WIDTH:
     j = START_HEIGHT
     while j <= END_HEIGHT:
@@ -28,9 +29,8 @@ while i <= END_WIDTH:
 
         j = j+1
         f_append = f_append + css
+    f.write(f_append) #dumps and empties variable
+    f_append = "" 
     i = i+1
 
 
-#print(f_append)
-f = open("style.css", "w")
-f.write(f_append)

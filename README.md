@@ -4,5 +4,8 @@ Generates a CSS file that generates a random Font, Background Color, and Text Co
 #v1.1 Changes
 -Added MoreFonts
 
-#2.0 update
--Media query now includes height as well as width
+#V2.0 - The Height Update
+ - Media Queries Now Include Height As Well As Width
+ 
+ #V2.1
+  - Optimized File Writing, the write buffer will no longer contain the full file at a time.
